@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fundamentals
+namespace fundamentals.exercism
 {
     static class AssemblyLine
     {
@@ -25,7 +25,7 @@ namespace fundamentals
                 { 9, 0.8 },
                 { 10, 0.77 }
             };
-            return dict.GetValueOrDefault(speed);
+            return dict[speed];
         }
         public static double ProductionRatePerHour(int speed) => SuccessRate(speed) * (speed * 221);
         public static int WorkingItemsPerMinute(int speed) => (int)ProductionRatePerHour(speed) / 60;

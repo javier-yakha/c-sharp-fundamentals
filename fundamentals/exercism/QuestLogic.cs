@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fundamentals
+namespace fundamentals.exercism
 {
     static class QuestLogic
     {
@@ -12,7 +12,7 @@ namespace fundamentals
 
         public static bool CanSpy(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake)
         {
-            return (knightIsAwake || archerIsAwake || prisonerIsAwake);
+            return knightIsAwake || archerIsAwake || prisonerIsAwake;
         }
         public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake) => !archerIsAwake && prisonerIsAwake;
 
@@ -20,7 +20,7 @@ namespace fundamentals
         {
             if (archerIsAwake) return false;
             if (petDogIsPresent) return true;
-            return (prisonerIsAwake && !knightIsAwake);
+            return prisonerIsAwake && !knightIsAwake;
         }
     }
 
