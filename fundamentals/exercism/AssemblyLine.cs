@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fundamentals
+namespace fundamentals.exercism
 {
     static class AssemblyLine
     {

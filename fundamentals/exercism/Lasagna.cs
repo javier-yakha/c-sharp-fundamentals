@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fundamentals
+namespace fundamentals.exercism
 {
     public class Lasagna
     {
@@ -13,10 +13,10 @@ namespace fundamentals
         public int RemainingMinutesInOven(int minutes) => ExpectedMinutesInOven() - minutes;
 
         public int PreparationTimeInMinutes(int layers) => 2 * layers;
-        
-        public int ElapsedTimeInMinutes(int layers, int minutes) => (layers * 2) + minutes;
+
+        public int ElapsedTimeInMinutes(int layers, int minutes) => layers * 2 + minutes;
 
     }
 
-    
+
 }
