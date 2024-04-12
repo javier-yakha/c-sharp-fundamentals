@@ -1,4 +1,6 @@
-﻿namespace syntax
+﻿using fundamentals;
+
+namespace syntax
 {
     /// <summary>
     /// Simple program showcasing basics of C#
