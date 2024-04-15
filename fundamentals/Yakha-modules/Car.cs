@@ -16,8 +16,6 @@ namespace Fundamentals
             yearOfMaking = year; // defining a variable
             Console.WriteLine(yearOfMaking);
         }
-        
-
         public void printColor()
         {
             Console.WriteLine(color);
