@@ -48,7 +48,6 @@ namespace Fundamentals
             //Console.WriteLine(msg6.Length);
             //Console.WriteLine(cipher6.Decode(msg6));
 
-
             Inheritance.Inherit();
 
             Enums.Enumerate();
