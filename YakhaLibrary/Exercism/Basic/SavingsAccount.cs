@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentals.Exercism.Basic
+namespace YakhaLibrary.Exercism.Basic
 {
     static class SavingsAccount
     {

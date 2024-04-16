@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentals
+namespace YakhaLibrary.Modules
 {
     public class Car
     {
@@ -12,16 +12,16 @@ namespace Fundamentals
         public int yearOfMaking; // declaring a variable
         public static string colorStatic = "Yellow";
 
-        public Car ()
+        public Car()
         {
             Console.WriteLine(colorStatic);
         }
-        public Car (int yearOfMaking)
+        public Car(int yearOfMaking)
         {
             this.yearOfMaking = yearOfMaking; // defining a variable
             Console.WriteLine(yearOfMaking);
         }
-        public Car (string color)
+        public Car(string color)
         {
             this.color = color;
         }

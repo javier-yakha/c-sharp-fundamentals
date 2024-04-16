@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentals
+namespace YakhaLibrary.Modules
 {
     /// <summary>
     /// Simple program showcasing basics of C#

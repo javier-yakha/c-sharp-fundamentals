@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentals.Exercism.Object
+namespace YakhaLibrary.Exercism.Object
 {
     public class RailFenceCipher
     {
@@ -34,7 +34,7 @@ namespace Fundamentals.Exercism.Object
                 }
                 else if (downwards) counter++;
 
-                else if (counter -1 < 0)
+                else if (counter - 1 < 0)
                 {
                     counter++;
                     downwards = !downwards;
@@ -46,7 +46,7 @@ namespace Fundamentals.Exercism.Object
                 output += level;
             }
             return output;
-            
+
         }
 
         public string Decode(string input)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentals.Exercism.Object
+namespace YakhaLibrary.Exercism.Object
 {
     public static class Player
     {

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentals.Exercism.Object
+namespace YakhaLibrary.Exercism.Object
 {
     public class SpaceAge
     {
         private double years;
         public SpaceAge(int seconds)
         {
-            double minutes = (double)seconds / 60.0d;
+            double minutes = seconds / 60.0d;
             double hours = minutes / 60.0d;
             double days = hours / 24.0d;
             years = days / 365.25d;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fundamentals.Exercism.Object
+namespace YakhaLibrary.Exercism.Object
 {
     public class RemoteControlCarNitro
     {
@@ -15,10 +15,10 @@ namespace Fundamentals.Exercism.Object
         public int battery;
         public RemoteControlCarNitro(int speed, int batteryDrain)
         {
-            this.distanceDriven = 0;
+            distanceDriven = 0;
             this.speed = speed;
 
-            this.battery = 100;
+            battery = 100;
             this.batteryDrain = batteryDrain;
         }
 
@@ -36,5 +36,5 @@ namespace Fundamentals.Exercism.Object
         public static RemoteControlCarNitro Nitro() => new RemoteControlCarNitro(50, 4);
     }
 
-    
+
 }
