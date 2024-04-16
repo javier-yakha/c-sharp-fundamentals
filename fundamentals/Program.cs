@@ -4,6 +4,7 @@ using System.Globalization;
 using YakhaLibrary.Exercism.Object;
 using YakhaLibrary.Modules;
 using YakhaLibrary.Modules.Inheritance;
+
 namespace Fundamentals
 {
 
