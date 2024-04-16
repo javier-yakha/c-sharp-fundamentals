@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 using YakhaLibrary.Exercism.Object;
+using YakhaLibrary.Exercism.Properties;
 using YakhaLibrary.Modules;
 using YakhaLibrary.Modules.Inheritance;
 
@@ -51,6 +52,8 @@ namespace Fundamentals
             Inheritance.Inherit();
 
             Enums.Enumerate();
+
+            WeighingMachine wm = new();
         }
     }
 }
