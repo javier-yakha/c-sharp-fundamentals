@@ -29,7 +29,7 @@ namespace Fundamentals.Exercism.Object
 
         public void Drive()
         {
-            if (battery < batteryDrain) return;
+            if (BatteryDrained()) return;
             battery -= batteryDrain;
             distanceDriven += speed;
         }

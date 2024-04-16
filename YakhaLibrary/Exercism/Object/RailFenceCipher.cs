@@ -11,6 +11,7 @@ namespace Fundamentals.Exercism.Object
         int rails;
         public RailFenceCipher(int rails)
         {
+            if (rails < 1) throw new ArgumentOutOfRangeException(nameof(rails));
             this.rails = rails;
         }
 
