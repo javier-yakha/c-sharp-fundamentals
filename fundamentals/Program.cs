@@ -52,8 +52,6 @@ namespace Fundamentals
             Inheritance.Inherit();
 
             Enums.Enumerate();
-
-            WeighingMachine wm = new();
         }
     }
 }

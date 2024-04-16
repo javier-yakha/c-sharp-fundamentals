@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YakhaLibrary.Exercism.Properties
 {
-    class WeighingMachine
+    public class WeighingMachine
     {
         //private int precision;
         private double weight;
