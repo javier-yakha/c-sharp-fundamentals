@@ -5,21 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YakhaLibrary.Exercism.Conditionals
+namespace YakhaLibrary.Exercism.Strings
 {
     public static class Bob
     {
         public static string Response(string statement)
         {
-            bool question = statement[^1] == '?';
-            bool yelling = string.Equals(statement.ToUpper(CultureInfo.InvariantCulture), statement);
+            statement = statement.TrimEnd();
             bool silence = string.Equals(statement, string.Empty);
+            if (silence) return "Fine. Be that way!";
 
+            bool alpha = false;
+            foreach (char c in statement)
+            {
+                if (Char.IsLetter(c)) alpha = true;
+            }
+            bool yelling = string.Equals(statement, statement.ToUpper()) && alpha;
+
+            bool question = statement[^1] == '?';
             if (yelling && question) return "Calm down, I know what I'm doing!";
             if (question) return "Sure.";
             if (yelling) return "Whoa, chill out!";
-            if (silence) return "Fine. Be that way!";
-            else return "Whatever.";
+            return "Whatever.";
         }
     }
 }
