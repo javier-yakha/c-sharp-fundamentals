@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YakhaLibrary.Exercism.Object
+namespace YakhaLibrary.Exercism.Random
 {
     public static class Player
     {

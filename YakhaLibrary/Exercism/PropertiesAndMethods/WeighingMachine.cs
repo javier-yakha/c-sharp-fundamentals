@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YakhaLibrary.Exercism.Properties
+namespace YakhaLibrary.Exercism.PropertiesAndMethods
 {
     public class WeighingMachine
     {
