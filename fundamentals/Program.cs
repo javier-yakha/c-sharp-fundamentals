@@ -1,10 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System.ComponentModel;
 using System.Globalization;
-using YakhaLibrary.Exercism.Object;
-using YakhaLibrary.Exercism.Properties;
-using YakhaLibrary.Modules;
-using YakhaLibrary.Modules.Inheritance;
 
 namespace Fundamentals
 {
@@ -48,9 +44,18 @@ namespace Fundamentals
             //Console.WriteLine(msg6.Length);
             //Console.WriteLine(cipher6.Decode(msg6));
 
-            Inheritance.Inherit();
+            // Inheritance.Inherit();
 
-            Enums.Enumerate();
+            // Enums.Enumerate();
+
+            string input = "stressed";
+            string output = "";
+            for (int i = 0; i < input.Length; i++)
+            {
+                output += input[^(i + 1)];
+            }
+            return output;
+            
         }
     }
 }

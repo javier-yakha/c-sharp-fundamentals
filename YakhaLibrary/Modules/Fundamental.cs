@@ -41,17 +41,38 @@ namespace YakhaLibrary.Modules
 
             Console.ReadLine();
         }
-
+        /*
         // Data Types
-        byte byteData = 5; // 0, 255 unsigned integer 8-bit
-        short shortData = 30000; // +-32,768 signed integer 16-bit
-        int intData = 141241; // +- 2,147,483,648 signed integer 32-bit
-        float floatData = 0.5f; // single precision 32-bit
-        double doubleData = 0.5141d; // double precision 64-bit
-        decimal decimalData = 124.12535141m; // triple? precision 128-bit - for financial or monetary operations
-        bool boolData = true; // logical true/false -- default is false
-        char charData = 'z'; // single character 16-bit unicode
-        string stringData = "hello world"; // series of unicode characters
-        DateTime date = new DateTime(); // date object
+
+        // 0, 255 unsigned integer 8-bit
+        byte byteData = 5; 
+
+        // +-32,768 signed integer 16-bit
+        short shortData = 30000; 
+
+        // +- 2,147,483,648 signed integer 32-bit
+        int intData = 141241; 
+
+        // single precision 32-bit
+        float floatData = 0.5f; 
+
+        // double precision 64-bit
+        double doubleData = 0.5141d; 
+
+        // triple? precision 128-bit - for financial or monetary operations
+        decimal decimalData = 124.12535141m; 
+
+        // logical true/false -- default is false
+        bool boolData = true; 
+
+        // single character 16-bit unicode
+        char charData = 'z'; 
+        
+        // series of unicode characters
+        string stringData = "hello world"; 
+
+        // date object
+        DateTime date = new DateTime(); 
+        */
     }
 }
