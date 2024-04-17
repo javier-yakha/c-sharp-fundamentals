@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-// TODO: Ask --> new method in derived class?
 namespace YakhaLibrary.Modules.Inheritance
 {
     public class Baseclass
