@@ -15,8 +15,8 @@ namespace Fundamentals
 
             // Enums.Enumerate();
 
-            int res = CollatzConjecture.Steps(16);
-            Console.WriteLine(res);
+            // CollatzConjecture.Steps(16);
+            // CollatzConjecture.StepsRecursive(16);
         }
     }
 }

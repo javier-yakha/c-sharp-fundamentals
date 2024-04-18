@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Exercism\DefaultDir\" />
-    <Folder Include="Exercism\Loops\" />
   </ItemGroup>
 
 </Project>
