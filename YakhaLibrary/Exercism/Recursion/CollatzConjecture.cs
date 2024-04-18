@@ -8,12 +8,12 @@ namespace YakhaLibrary.Exercism.Recursion
 {
     public static class CollatzConjecture
     {
-        public static int StepsRecursive(int number)
+        public static int StepsR(int number)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(number);
             if (number == 1) return 0;
-            if (number % 2 == 0) return 1 + StepsRecursive(number / 2);
-            return 1 + StepsRecursive((number * 3) + 1);
+            if (number % 2 == 0) return 1 + StepsR(number / 2);
+            return 1 + StepsR((number * 3) + 1);
         }
         public static int Steps(int number)
         {
