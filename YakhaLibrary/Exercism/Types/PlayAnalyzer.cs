@@ -27,15 +27,13 @@ namespace YakhaLibrary.Exercism.Types
         public static string AnalyzeOffField(object report)
         {
             if (report is int) return $"There are {report} supporters at the match.";
+
             if (report is string) return $"{report}";
-            if (report is Injury injury)
-            {
-                return $"Oh no! {injury.GetDescription()} Medics are on the field.";
-            }
-            if (report is Incident incident)
-            {
-                return $"{incident.GetDescription()}";
-            }
+
+            if (report is Injury injury) return $"Oh no! {injury.GetDescription()} Medics are on the field.";
+            
+            if (report is Incident incident) return $"{incident.GetDescription()}";
+            
             if (report is Manager manager)
             {
                 if (manager.Club == null) return manager.Name;
