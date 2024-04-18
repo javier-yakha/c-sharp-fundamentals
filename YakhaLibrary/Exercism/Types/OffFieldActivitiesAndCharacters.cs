@@ -11,9 +11,7 @@ namespace YakhaLibrary.Exercism.Types
         public class Manager
         {
             public string Name { get; }
-
             public string? Club { get; }
-
             public Manager(string name, string? club)
             {
                 this.Name = name;
