@@ -11,7 +11,7 @@ namespace YakhaLibrary.Modules.Inheritance
         string brand = "Ford";
         public virtual void WriteClass()
         {
-            Console.WriteLine("base class");
+            Console.WriteLine("base class - ", brand);
         }
     }
     class Car : Vehicle // syntax of inheritance
@@ -19,13 +19,13 @@ namespace YakhaLibrary.Modules.Inheritance
         string color = "Red";
         public override void WriteClass()
         {
-            Console.WriteLine("Derived class");
+            Console.WriteLine("Derived class - ", color);
         }
         // public abstract void nonAbstractMethod(); // Error <---> can't create abstract methods on non-abstract classes
     }
     class Bicycle : Vehicle
     {
-        public void WriteClass()
+        public override void WriteClass()
         {
             Console.WriteLine("Non overriden method");
         }

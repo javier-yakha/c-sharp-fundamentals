@@ -21,7 +21,7 @@ namespace YakhaLibrary.Exercism.Inheritance
         {
             DistanceTravelled += 10;
         }
-        public int CompareTo(ProductionRemoteControlCar other) => NumberOfVictories - other.NumberOfVictories;
+        public int CompareTo(ProductionRemoteControlCar? other) => NumberOfVictories - other.NumberOfVictories;
     }
     public class ExperimentalRemoteControlCar : IRemoteControlCar
     {

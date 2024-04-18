@@ -22,7 +22,7 @@ namespace YakhaLibrary.Modules
 
             // Commenting
             // string name = Console.ReadLine();
-            string name = "Six Plus Eight";
+            // string name = "Six Plus Eight";
             /*
             Console.WriteLine(name);
             Console.WriteLine("Hello, " + name);
