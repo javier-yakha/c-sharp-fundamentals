@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 namespace YakhaLibrary.Exercism.Graphs
 {
     /// <summary>
-    /// generic
-    /// <see cref="SimpleNode{T}"/> structure
+    /// generic <see cref="SimpleNode{T}"/> structure
     /// usage along <see cref="SimpleLinkedList{T}"/>
     /// </summary>
     /// <typeparam name="T">
-    /// Generic value from <see cref="System.Collections.Generic"/>
+    /// Generic value from
+    /// <see cref="System.Collections.Generic"/>
     /// </typeparam>
     /// <param name="value">
-    /// Generic <see langword="value"/>
-    /// to be stored in a single <see cref="SimpleNode{T}"/>
-    /// or data point
+    /// Generic <see langword="value"/> to be stored in a single
+    /// <see cref="SimpleNode{T}"/> or data point
     /// </param>
     public class SimpleNode<T>(T value)
     {
