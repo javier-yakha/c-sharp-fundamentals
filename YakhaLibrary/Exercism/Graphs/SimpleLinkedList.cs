@@ -9,14 +9,14 @@ namespace YakhaLibrary.Exercism.Graphs
 {
     public class SimpleLinkedList<T> : IEnumerable<T>
     {
-        Node<T>? head;
+        SimpleNode<T>? head;
         public int Count {  get; private set; }
         public SimpleLinkedList() { head = null; }
         public SimpleLinkedList(T value) { Push(value); }
         public SimpleLinkedList(T[] values) { foreach (T value in values) Push(value); }
         public void Push(T value)
         {
-            Node<T> node = new(value) { Next = head };
+            SimpleNode<T> node = new(value) { Next = head };
             head = node;
             Count++;
         }
@@ -32,7 +32,7 @@ namespace YakhaLibrary.Exercism.Graphs
         IEnumerator<T> IEnumerable<T>.GetEnumerator() => GetEnumerator();
         public IEnumerator<T> GetEnumerator()
         {
-            for (Node<T>? i = head; i != null; i = i.Next)
+            for (SimpleNode<T>? i = head; i != null; i = i.Next)
             {
                 T value = i.Value;
                 yield return value;
@@ -40,8 +40,8 @@ namespace YakhaLibrary.Exercism.Graphs
         }
         public void Reverse()
         {
-            Node<T>? tmp = null;
-            Node<T>? current = head;
+            SimpleNode<T>? tmp = null;
+            SimpleNode<T>? current = head;
             while (current != null)
             {
                 if (current.Next == null)
