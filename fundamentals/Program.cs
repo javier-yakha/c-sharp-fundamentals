@@ -34,11 +34,9 @@ namespace Fundamentals
             //Identifier.Clean("à-ḃç");
 
             //Faceid2 fi2 = new Faceid2();
-            Authenticator auth = new();
-            bool first = auth.Register(new Identity("tunde@thecompetition.com", new FacialFeatures("blue", 0.9m)));
-            bool second = auth.Register(new Identity("tunde@thecompetition.com", new FacialFeatures("blue", 0.9m)));
-            Console.WriteLine(first);
-            Console.WriteLine(second);
+            //Authenticator auth = new();
+
+
         }   
 
     }

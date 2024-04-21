@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace YakhaLibrary.Exercism.Graphs
 {
     public class SimpleLinkedList<T> : IEnumerable<T>
     {
-        SimpleNode<T>? head;
-        public int Count {  get; private set; }
+        private SimpleNode<T>? head;
+        public int Count { get; private set; } = 0;
         public SimpleLinkedList() { head = null; }
         public SimpleLinkedList(T value) { Push(value); }
         public SimpleLinkedList(T[] values) { foreach (T value in values) Push(value); }
         public void Push(T value)
         {
-            SimpleNode<T> node = new(value) { Next = head };
+            SimpleNode<T> node = new(value);
+            node.Next = head;
             head = node;
             Count++;
         }
