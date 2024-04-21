@@ -12,44 +12,29 @@ namespace YakhaLibrary.Exercism.Types.Equalities
         {
             public string EyeColor { get; } = eyeColor;
             public decimal PhiltrumWidth { get; } = philtrumWidth;
-            // TODO: implement equality and GetHashCode() methods
-            public bool Equals(FacialFeatures other)
-            {
-                bool eyes = EyeColor == other.EyeColor;
-                bool philtrum = PhiltrumWidth == other.PhiltrumWidth;
-                return eyes && philtrum;
-            }
-            public override int GetHashCode()
-            {
-                return (EyeColor.GetHashCode() - PhiltrumWidth.GetHashCode()).GetHashCode();
-            }
+            public bool Equals(FacialFeatures other) => EyeColor == other.EyeColor && PhiltrumWidth == other.PhiltrumWidth;
+            public override int GetHashCode() => (EyeColor.GetHashCode() - PhiltrumWidth.GetHashCode()).GetHashCode();
         }
         public class Identity(string email, FacialFeatures facialFeatures)
         {
             public string Email { get; } = email;
             public FacialFeatures FacialFeatures { get; } = facialFeatures;
-            // TODO: implement equality and GetHashCode() methods
+            public bool Equals(Identity other) => FacialFeatures.Equals(other.FacialFeatures) && Email == other.Email;
+            public override int GetHashCode() => (Email.GetHashCode() - FacialFeatures.GetHashCode()).GetHashCode();
         }
         public class Authenticator
         {
+            private Identity Admin { get; set; } = new Identity("admin@exerc.ism", new FacialFeatures("green", 0.9m));
+            private HashSet<Identity> Users { get; set; } = [];
             public static bool AreSameFace(FacialFeatures faceA, FacialFeatures faceB) => faceA.Equals(faceB);
-            
-            public bool IsAdmin(Identity identity)
-            {
-                throw new NotImplementedException("Please implement the Authenticator.IsAdmin() method");
-            }
+            public bool IsAdmin(Identity identity) => identity.Equals(Admin);
             public bool Register(Identity identity)
             {
-                throw new NotImplementedException("Please implement the Authenticator.Register() method");
+                if (IsRegistered(identity)) return false;
+                return Users.Add(identity);
             }
-            public bool IsRegistered(Identity identity)
-            {
-                throw new NotImplementedException("Please implement the Authenticator.IsRegistered() method");
-            }
-            public static bool AreSameObject(Identity identityA, Identity identityB)
-            {
-                throw new NotImplementedException("Please implement the Authenticator.AreSameObject() method");
-            }
+            public bool IsRegistered(Identity identity) => Users.Any(x => x.Equals(identity));
+            public static bool AreSameObject(Identity identityA, Identity identityB) => identityA == identityB;
         }
     }
 }

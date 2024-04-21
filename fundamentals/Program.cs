@@ -4,7 +4,9 @@ using System.Globalization;
 using YakhaLibrary.Exercism;
 using YakhaLibrary.Exercism.Graphs;
 using YakhaLibrary.Exercism.Loops.Recursion;
+using YakhaLibrary.Exercism.Types.Equalities;
 using YakhaLibrary.Exercism.Types.Strings;
+using static YakhaLibrary.Exercism.Types.Equalities.Faceid2;
 
 namespace Fundamentals
 {
@@ -28,7 +30,15 @@ namespace Fundamentals
             // SimpleLinkedList<int> list = new([1, 3, -5, 8]);
             // list.Reverse();
             // foreach (var i in list) Console.WriteLine(i);
-            Identifier.Clean("à-ḃç");
+
+            //Identifier.Clean("à-ḃç");
+
+            //Faceid2 fi2 = new Faceid2();
+            Authenticator auth = new();
+            bool first = auth.Register(new Identity("tunde@thecompetition.com", new FacialFeatures("blue", 0.9m)));
+            bool second = auth.Register(new Identity("tunde@thecompetition.com", new FacialFeatures("blue", 0.9m)));
+            Console.WriteLine(first);
+            Console.WriteLine(second);
         }   
 
     }
