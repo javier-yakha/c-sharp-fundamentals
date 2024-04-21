@@ -20,7 +20,7 @@ namespace YakhaLibrary.Exercism.Graphs
     /// </param>
     public class DoubleNode<T>(T value)
     {
-        public T Value { get; set; } = value;
+        public T Value { get; private set; } = value;
         public DoubleNode<T>? Next { get; set; } = null;
         public DoubleNode<T>? Prev { get; set; } = null;
     }

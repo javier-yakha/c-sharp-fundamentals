@@ -8,8 +8,8 @@ namespace YakhaLibrary.Exercism.Graphs
 {
     public class Deque<T>
     {
-        DoubleNode<T>? head = null;
-        DoubleNode<T>? tail = null;
+        private DoubleNode<T>? head = null;
+        private DoubleNode<T>? tail = null;
         public int Count { get; private set; } = 0;
         public void Push(T value)
         {
@@ -17,15 +17,25 @@ namespace YakhaLibrary.Exercism.Graphs
             if (Count == 0 || tail == null)
             {
                 head = tail = node;
+                //head.Next = tail;
+                //tail.Prev = head;
             }
-            Count++;
             tail.Next = node;
             node.Prev = tail;
             tail = node;
+            Count++;
         }
         public T Pop()
         {
-            throw new NotImplementedException("You need to implement this function.");
+            if (Count == 0 || tail == null) throw new InvalidOperationException("Can't retrieve data from an empty Deque.");
+            T value = tail.Value;
+            if (tail.Prev != null)
+            {
+                tail = tail.Prev;
+                tail.Next = null;
+            }
+            Count--;
+            return value;
         }
         public void Unshift(T value)
         {
@@ -34,14 +44,22 @@ namespace YakhaLibrary.Exercism.Graphs
             {
                 tail = head = node;
             }
-            Count++;
             head.Prev = node;
             node.Next = head;
             head = node;
+            Count++;
         }
         public T Shift()
         {
-            throw new NotImplementedException("You need to implement this function.");
+            if (Count == 0 || head == null) throw new InvalidOperationException("Can't retrieve data from an empty Deque");
+            T value = head.Value;
+            if (head.Next != null)
+            {
+                head = head.Next;
+                head.Prev = null;
+            }
+            Count--;
+            return value;
         }
     }
 }
