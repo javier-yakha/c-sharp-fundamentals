@@ -12,44 +12,45 @@ namespace YakhaLibrary.Exercism.Graphs
 
     public class BinarySearchTree : IEnumerable<int>
     {
-        public BinarySearchTree(int value)
-        {
-        }
-        public BinarySearchTree(IEnumerable<int> values)
-        {
-        }
-        public int Value
-        {
-            get
-            {
-                throw new NotImplementedException("You need to implement this function.");
-            }
-        }
-        public BinarySearchTree Left
-        {
-            get
-            {
-                throw new NotImplementedException("You need to implement this function.");
-            }
-        }
-        public BinarySearchTree Right
-        {
-            get
-            {
-                throw new NotImplementedException("You need to implement this function.");
-            }
-        }
+        public int Value { get; private set; }
+        public int Size { get; private set; } = 0;
+        public BinarySearchTree(int value) { Add(value); }
+        public BinarySearchTree(IEnumerable<int> values) { foreach (int value in values) Add(value); }
+        public BinarySearchTree? Left { get; private set; } = null;
+        public BinarySearchTree? Right { get; private set; } = null;
         public BinarySearchTree Add(int value)
         {
-            throw new NotImplementedException("You need to implement this function.");
+            if (Size == 0) 
+            { 
+                Value = value;
+                Size++;
+                return this;
+            }
+            else if (value > Value)
+            {
+                Size++;
+                if (Right == null) return Right = new BinarySearchTree(value);
+                return Right.Add(value);
+            }
+            else // Accepts duplicates <- -> Exercism requirement
+            {
+                if (Left == null) return Left = new BinarySearchTree(value);
+                return Left.Add(value);
+            }
         }
         public IEnumerator<int> GetEnumerator()
         {
-            throw new NotImplementedException("You need to implement this function.");
+            List<int> list = [];
+            Traverse(this, list);
+            foreach (int i in list) yield return i;
         }
-        IEnumerator IEnumerable.GetEnumerator()
+        private void Traverse(BinarySearchTree? node, List<int> data)
         {
-            throw new NotImplementedException("You need to implement this function.");
+            if (node == null) return;
+            Traverse(node.Left, data);
+            data.Add(node.Value);
+            Traverse(node.Right, data);
         }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
