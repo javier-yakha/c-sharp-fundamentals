@@ -38,8 +38,6 @@ namespace Fundamentals
             //Authenticator auth = new();
 
             // BinarySearchTree bst = new([ 5, 4 ]);
-            TelemetryBuffer.ToBuffer(-1L);
-            Console.WriteLine();
             
             Console.ReadLine();
         }   
