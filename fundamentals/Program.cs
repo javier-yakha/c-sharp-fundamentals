@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Security.Cryptography;
 using YakhaLibrary.Exercism;
 using YakhaLibrary.Exercism.Graphs;
 using YakhaLibrary.Exercism.Loops.Recursion;
@@ -14,7 +15,6 @@ namespace Fundamentals
 
     class MyFirstProgram
     {
-
         public static void Main(string[] args)
         {
             // Inheritance.Inherit();
@@ -38,29 +38,10 @@ namespace Fundamentals
             //Authenticator auth = new();
 
             // BinarySearchTree bst = new([ 5, 4 ]);
-
-            byte[] byteArray = TelemetryBuffer.ToBuffer(5);
-            foreach (var i in byteArray)
-            {
-                Console.WriteLine(i);
-            }
-            Console.WriteLine(ushort.MinValue);
-            Console.WriteLine(ushort.MaxValue);
-
-            Console.WriteLine(short.MinValue);
-            Console.WriteLine(short.MaxValue);
-
-            Console.WriteLine(UInt32.MinValue);
-            Console.WriteLine(UInt32.MaxValue);
-
-            Console.WriteLine(Int32.MinValue);
-            Console.WriteLine(Int32.MaxValue);
-
-            Console.WriteLine(Int64.MinValue);
-            Console.WriteLine(Int64.MaxValue);
+            TelemetryBuffer.ToBuffer(-1L);
+            Console.WriteLine();
 
             Console.ReadLine();
         }   
-
     }
 }

@@ -18,23 +18,42 @@ namespace YakhaLibrary.Exercism.Types.Integrals
         */
         public static byte[] ToBuffer(long reading)
         {
+            byte size;
             byte[] bytes = new byte[9];
-            if (reading >= 0)
+            switch (reading)
             {
-                if (reading <= ushort.MaxValue) bytes[0] = 0x2;
-                else if (reading <= int.MaxValue) bytes[0] = 0xfc;
-                else if (reading <= uint.MaxValue) bytes[0] = 0x4;
-                else if (reading <= long.MaxValue) bytes[0] = 0xf8;
-                else bytes[0] = 0x8;
-            }
-            else
-            {
-                if (reading >= short.MinValue) bytes[0] = 0xfc;
-                else if (reading >= int.MinValue) bytes[0] = 0x4;
-                else bytes[0] = 0x8;
-            }
+                // reading variable must be cast from <long> to corresponding integral
+                case > uint.MaxValue:
+                    size = 0xf8;
+                    BitConverter.GetBytes(reading).CopyTo(bytes, 1);
+                    break;
+                case > int.MaxValue:
+                    size = 0x4;
+                    BitConverter.GetBytes((uint)reading).CopyTo(bytes, 1);
+                    break;
+                case > ushort.MaxValue:
+                    size = 0xfc;
+                    BitConverter.GetBytes((int)reading).CopyTo(bytes, 1);
+                    break;
+                case >= 0:
+                    size = 0x2;
+                    BitConverter.GetBytes((ushort)reading).CopyTo(bytes, 1);
+                    break;
+                case >= short.MinValue:
+                    size = 0xfe;
+                    BitConverter.GetBytes((short)reading).CopyTo(bytes, 1);
+                    break;
+                case >= int.MinValue:
+                    size = 0xfc;
+                    BitConverter.GetBytes((int)reading).CopyTo(bytes, 1);
+                    break;
+                default:
+                    size = 0xf8;
+                    BitConverter.GetBytes(reading).CopyTo(bytes, 1);
+                    break;
+            };
+            bytes[0] = size;
             return bytes;
-            
         }
         /*
         TelemetryBuffer.FromBuffer(new byte[] {0xfc, 0xff, 0xff, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0 }) => 2147483647
@@ -42,7 +61,10 @@ namespace YakhaLibrary.Exercism.Types.Integrals
          */
         public static long FromBuffer(byte[] buffer)
         {
-            throw new NotImplementedException("Please implement the static TelemetryBuffer.FromBuffer() method");
+            switch (buffer[0])
+            {
+
+            }
         }
     }
 }
