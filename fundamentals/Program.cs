@@ -5,6 +5,7 @@ using YakhaLibrary.Exercism;
 using YakhaLibrary.Exercism.Graphs;
 using YakhaLibrary.Exercism.Loops.Recursion;
 using YakhaLibrary.Exercism.Types.Equalities;
+using YakhaLibrary.Exercism.Types.Integrals;
 using YakhaLibrary.Exercism.Types.Strings;
 using static YakhaLibrary.Exercism.Types.Equalities.Faceid2;
 
@@ -37,6 +38,12 @@ namespace Fundamentals
             //Authenticator auth = new();
 
             // BinarySearchTree bst = new([ 5, 4 ]);
+
+            byte[] byteArray = TelemetryBuffer.ToBuffer(5);
+            foreach (var i in byteArray)
+            {
+                Console.WriteLine(i);
+            }
         }   
 
     }

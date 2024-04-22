@@ -14,7 +14,7 @@ namespace YakhaLibrary.Exercism.Graphs
         public void Push(T value)
         {
             DoubleNode<T> node = new(value);
-            if (Count == 0 || tail == null)
+            if (Count == 0 || tail is null)
             {
                 head = tail = node;
                 //head.Next = tail;
@@ -27,9 +27,9 @@ namespace YakhaLibrary.Exercism.Graphs
         }
         public T Pop()
         {
-            if (Count == 0 || tail == null) throw new InvalidOperationException("Can't retrieve data from an empty Deque.");
+            if (Count == 0 || tail is null) throw new InvalidOperationException("Can't retrieve data from an empty Deque.");
             T value = tail.Value;
-            if (tail.Prev != null)
+            if (tail.Prev is not null)
             {
                 tail = tail.Prev;
                 tail.Next = null;
@@ -40,7 +40,7 @@ namespace YakhaLibrary.Exercism.Graphs
         public void Unshift(T value)
         {
             DoubleNode<T> node = new(value);
-            if (Count == 0 || head == null)
+            if (Count == 0 || head is null)
             {
                 tail = head = node;
             }
@@ -51,9 +51,9 @@ namespace YakhaLibrary.Exercism.Graphs
         }
         public T Shift()
         {
-            if (Count == 0 || head == null) throw new InvalidOperationException("Can't retrieve data from an empty Deque");
+            if (Count == 0 || head is null) throw new InvalidOperationException("Can't retrieve data from an empty Deque");
             T value = head.Value;
-            if (head.Next != null)
+            if (head.Next is not null)
             {
                 head = head.Next;
                 head.Prev = null;

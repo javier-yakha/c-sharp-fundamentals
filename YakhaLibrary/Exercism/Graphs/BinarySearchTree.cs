@@ -29,12 +29,12 @@ namespace YakhaLibrary.Exercism.Graphs
             else if (value > Value)
             {
                 Size++;
-                if (Right == null) return Right = new BinarySearchTree(value);
+                if (Right is null) return Right = new BinarySearchTree(value);
                 return Right.Add(value);
             }
             else // Accepts duplicates <- -> Exercism requirement
             {
-                if (Left == null) return Left = new BinarySearchTree(value);
+                if (Left is null) return Left = new BinarySearchTree(value);
                 return Left.Add(value);
             }
         }
@@ -44,9 +44,9 @@ namespace YakhaLibrary.Exercism.Graphs
             Traverse(this, list);
             foreach (int i in list) yield return i;
         }
-        private void Traverse(BinarySearchTree? node, List<int> data)
+        private static void Traverse(BinarySearchTree? node, List<int> data)
         {
-            if (node == null) return;
+            if (node is null) return;
             Traverse(node.Left, data);
             data.Add(node.Value);
             Traverse(node.Right, data);
