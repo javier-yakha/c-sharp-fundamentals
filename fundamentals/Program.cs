@@ -37,11 +37,6 @@ namespace Fundamentals
             //Authenticator auth = new();
 
             // BinarySearchTree bst = new([ 5, 4 ]);
-
-            foreach (var arg in CultureInfo.GetCultures())
-            {
-
-            }
         }   
 
     }
