@@ -44,6 +44,22 @@ namespace Fundamentals
             {
                 Console.WriteLine(i);
             }
+            Console.WriteLine(ushort.MinValue);
+            Console.WriteLine(ushort.MaxValue);
+
+            Console.WriteLine(short.MinValue);
+            Console.WriteLine(short.MaxValue);
+
+            Console.WriteLine(UInt32.MinValue);
+            Console.WriteLine(UInt32.MaxValue);
+
+            Console.WriteLine(Int32.MinValue);
+            Console.WriteLine(Int32.MaxValue);
+
+            Console.WriteLine(Int64.MinValue);
+            Console.WriteLine(Int64.MaxValue);
+
+            Console.ReadLine();
         }   
 
     }

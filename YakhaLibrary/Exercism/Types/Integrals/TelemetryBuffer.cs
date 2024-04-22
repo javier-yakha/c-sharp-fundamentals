@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,8 +18,22 @@ namespace YakhaLibrary.Exercism.Types.Integrals
         */
         public static byte[] ToBuffer(long reading)
         {
-
-            return new byte[9];
+            byte[] bytes = new byte[9];
+            if (reading >= 0)
+            {
+                if (reading <= ushort.MaxValue) bytes[0] = 0x2;
+                else if (reading <= int.MaxValue) bytes[0] = 0xfc;
+                else if (reading <= uint.MaxValue) bytes[0] = 0x4;
+                else if (reading <= long.MaxValue) bytes[0] = 0xf8;
+                else bytes[0] = 0x8;
+            }
+            else
+            {
+                if (reading >= short.MinValue) bytes[0] = 0xfc;
+                else if (reading >= int.MinValue) bytes[0] = 0x4;
+                else bytes[0] = 0x8;
+            }
+            return bytes;
             
         }
         /*
