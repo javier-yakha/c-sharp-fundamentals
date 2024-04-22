@@ -9,13 +9,6 @@ namespace YakhaLibrary.Exercism.Types.Integrals
 {
     public static class TelemetryBuffer
     {
-        /*
-        Type: ushort, bytes: 2, signed: no, prefix byte: 2
-        TelemetryBuffer.ToBuffer(5) => {0x2, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 };
-
-        // Type: int, bytes: 4, signed: yes, prefix byte: 256 - 4
-        TelemetryBuffer.ToBuffer(Int32.MaxValue) => {0xfc, 0xff, 0xff, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0 };
-        */
         public static byte[] ToBuffer(long reading)
         {
             byte size;
@@ -55,16 +48,17 @@ namespace YakhaLibrary.Exercism.Types.Integrals
             bytes[0] = size;
             return bytes;
         }
-        /*
-        TelemetryBuffer.FromBuffer(new byte[] {0xfc, 0xff, 0xff, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0 }) => 2147483647
-        If the prefix byte is of unexpected value then 0 should be returned.
-         */
         public static long FromBuffer(byte[] buffer)
         {
-            switch (buffer[0])
+            return buffer[0] switch
             {
-
-            }
+                0x2  => BitConverter.ToUInt16(buffer, 1),
+                0xfe => BitConverter.ToInt16(buffer, 1),
+                0x4  => BitConverter.ToUInt32(buffer, 1),
+                0xfc => BitConverter.ToInt32(buffer, 1),
+                0xf8 => BitConverter.ToInt64(buffer, 1),
+                _    => 0
+            };
         }
     }
 }
