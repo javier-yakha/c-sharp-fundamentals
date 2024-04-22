@@ -36,8 +36,12 @@ namespace Fundamentals
             //Faceid2 fi2 = new Faceid2();
             //Authenticator auth = new();
 
-            BinarySearchTree bst = new([ 5, 4 ]);
-            Console.WriteLine(bst.Value);
+            // BinarySearchTree bst = new([ 5, 4 ]);
+
+            foreach (var arg in CultureInfo.GetCultures())
+            {
+
+            }
         }   
 
     }
