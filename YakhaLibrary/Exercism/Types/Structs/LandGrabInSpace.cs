@@ -21,34 +21,53 @@ namespace YakhaLibrary.Exercism.Types.Structs
             public override int GetHashCode() => X.GetHashCode() ^ Y.GetHashCode();
             
         }
-        public readonly struct Plot(Coord left, Coord right, Coord down, Coord up)
+        public readonly struct Plot(Coord west, Coord east, Coord south, Coord north)
         {
             public static bool operator ==(Plot lhs, Plot rhs) => lhs.Equals(rhs);
             public static bool operator !=(Plot lhs, Plot rhs) => !lhs.Equals(rhs);
             public readonly bool Equals(Plot other)
             {
                 return
-                    Left == other.Left &&
-                    Right == other.Right &&
-                    Up == other.Up &&
-                    Down == other.Down;
+                    West == other.West &&
+                    East == other.East &&
+                    North == other.North &&
+                    South == other.South;
             }
             public override readonly bool Equals(object? obj) => obj is not null && obj.GetType() == GetType() && Equals((Plot)obj);
-            public override readonly int GetHashCode() => Left.GetHashCode() ^ Right.GetHashCode() ^ Up.GetHashCode() ^ Down.GetHashCode();
-            public Coord Left { get; } = left;
-            public Coord Right { get; } = right;
-            public Coord Up { get; } = up;
-            public Coord Down { get; } = down;
+            public override readonly int GetHashCode() => West.GetHashCode() ^ East.GetHashCode() ^ North.GetHashCode() ^ South.GetHashCode();
+            public Coord West { get; } = west;
+            public Coord East { get; } = east;
+            public Coord North { get; } = north;
+            public Coord South { get; } = south;
+            public int GetPerimeter()
+            {
+                int NW = (int)(Math.Pow(West.X - North.X, 2) + Math.Pow(West.Y - North.Y, 2));
+                int NE = (int)(Math.Pow(East.X - North.X, 2) + Math.Pow(East.Y - North.Y, 2));
+                int SW = (int)(Math.Pow(West.X - South.X, 2) + Math.Pow(West.Y - South.Y, 2));
+                int SE = (int)(Math.Pow(East.X - South.X, 2) + Math.Pow(East.Y - South.Y, 2));
+                return NW + NE + SW + SE;
+            }
         }
         public class ClaimsHandler
         {
-            public List<Plot> plots = [];
-            public void StakeClaim(Plot plot) => plots.Add(plot);
+            public HashSet<Plot> plots = [];
+            public Plot lastPlot;
+            public void StakeClaim(Plot plot)
+            {
+                lastPlot = plot;
+                plots.Add(plot);
+            }
             public bool IsClaimStaked(Plot plot) => plots.Contains(plot);
-            public bool IsLastClaim(Plot plot) => plots[^1] == plot;
+            public bool IsLastClaim(Plot plot) => lastPlot == plot;
             public Plot GetClaimWithLongestSide()
             {
-                return plots[^1];
+                if (plots.Count == 0) throw new ArgumentOutOfRangeException("There are no plots claimed");
+                Plot biggest = lastPlot;
+                foreach (var plot in plots)
+                {
+                    if (plot.GetPerimeter() > biggest.GetPerimeter()) biggest = plot;
+                }
+                return biggest;
             }
         }
     }
