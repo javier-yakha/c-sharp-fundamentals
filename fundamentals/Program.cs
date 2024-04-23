@@ -8,6 +8,7 @@ using YakhaLibrary.Exercism.Loops.Recursion;
 using YakhaLibrary.Exercism.Types.Equalities;
 using YakhaLibrary.Exercism.Types.Integrals;
 using YakhaLibrary.Exercism.Types.Strings;
+using YakhaLibrary.Modules;
 using static YakhaLibrary.Exercism.Types.Equalities.Faceid2;
 
 namespace Fundamentals
@@ -38,7 +39,12 @@ namespace Fundamentals
             //Authenticator auth = new();
 
             // BinarySearchTree bst = new([ 5, 4 ]);
-            
+
+            // EventsDelegates.Click += EventHandlerClass.ButtonClickHandler;
+            // EventsDelegates.SimulateClick();
+
+            RegEx.RegExMatching();
+
             Console.ReadLine();
         }   
     }

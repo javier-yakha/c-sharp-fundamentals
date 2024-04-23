@@ -48,7 +48,7 @@ namespace YakhaLibrary.Exercism.Types.Structs
             public bool IsLastClaim(Plot plot) => plots[^1] == plot;
             public Plot GetClaimWithLongestSide()
             {
-                throw new NotImplementedException("Please implement the ClaimsHandler.GetClaimWithLongestSide() method");
+                return plots[^1];
             }
         }
     }
