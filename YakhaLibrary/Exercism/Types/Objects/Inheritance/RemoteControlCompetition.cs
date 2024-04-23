@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YakhaLibrary.Exercism.Objects.Inheritance
+namespace YakhaLibrary.Exercism.Types.Objects.Inheritance
 {
 
     public interface IRemoteControlCar

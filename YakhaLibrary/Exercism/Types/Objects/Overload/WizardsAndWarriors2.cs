@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YakhaLibrary.Exercism.Objects.Overload
+namespace YakhaLibrary.Exercism.Types.Objects.Overload
 {
     public static class GameMaster
     {
@@ -17,8 +17,8 @@ namespace YakhaLibrary.Exercism.Objects.Overload
             if (travelMethod == TravelMethod.Horseback) msg += "on horseback.";
             return msg;
         }
-        public static string Describe(Character character, Destination destination, TravelMethod travelMethod) => $"{GameMaster.Describe(character)} {GameMaster.Describe(travelMethod)} {GameMaster.Describe(destination)}";
-        public static string Describe(Character character, Destination destination) => $"{GameMaster.Describe(character)} You're traveling to your destination by walking. {GameMaster.Describe(destination)}";
+        public static string Describe(Character character, Destination destination, TravelMethod travelMethod) => $"{Describe(character)} {Describe(travelMethod)} {Describe(destination)}";
+        public static string Describe(Character character, Destination destination) => $"{Describe(character)} You're traveling to your destination by walking. {Describe(destination)}";
     }
     public class Character
     {

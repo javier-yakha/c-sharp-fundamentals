@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YakhaLibrary.Exercism.Objects
+namespace YakhaLibrary.Exercism.Types.Objects
 {
     public class RemoteControlCarNitro
     {

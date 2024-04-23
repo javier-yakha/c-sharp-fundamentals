@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YakhaLibrary.Exercism.Objects.Members
+namespace YakhaLibrary.Exercism.Types.Objects.Members
 {
     public class Lasagna
     {
