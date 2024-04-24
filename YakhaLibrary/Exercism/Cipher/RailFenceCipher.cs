@@ -8,26 +8,23 @@ namespace YakhaLibrary.Exercism.Cipher
 {
     public class RailFenceCipher
     {
-        int rails;
+        public int Rails;
         public RailFenceCipher(int rails)
         {
-            if (rails < 1) throw new ArgumentOutOfRangeException(nameof(rails));
-            this.rails = rails;
+            ArgumentOutOfRangeException.ThrowIfLessThan(rails, 1);
+            Rails = rails;
         }
-
         public string Encode(string input)
         {
             string output = "";
-            string[] levels = new string[rails];
-
+            string[] levels = new string[Rails];
             int counter = 0;
             bool downwards = true;
-
             for (int i = 0; i < input.Length; i++)
             {
                 levels[counter] += input[i];
 
-                if (downwards && counter + 1 >= rails)
+                if (downwards && counter + 1 >= Rails)
                 {
                     counter--;
                     downwards = !downwards;
@@ -46,12 +43,9 @@ namespace YakhaLibrary.Exercism.Cipher
                 output += level;
             }
             return output;
-
         }
-
         public string Decode(string input)
         {
-
             return string.Empty;
         }
     }

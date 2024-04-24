@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using YakhaLibrary.Exercism;
+using YakhaLibrary.Exercism.Cipher;
 using YakhaLibrary.Exercism.Graphs;
 using YakhaLibrary.Exercism.Loops.Recursion;
 using YakhaLibrary.Exercism.Types.Equalities;
@@ -45,6 +46,8 @@ namespace Fundamentals
             // EventsDelegates.SimulateClick();
 
             //RegEx.RegExMatching();
+            
+            RotationalCipher.Rotate("abcdefghijklmnopqrstuvwxyz", 2);
 
             Console.ReadLine();
         }   
