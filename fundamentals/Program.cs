@@ -43,7 +43,11 @@ namespace Fundamentals
             // EventsDelegates.Click += EventHandlerClass.ButtonClickHandler;
             // EventsDelegates.SimulateClick();
 
-            RegEx.RegExMatching();
+            //RegEx.RegExMatching();
+
+            LogParser lp = new();
+            string test = lp.RemoveEndOfLineText("[INF] end-of-line23033 Network Falure end-of-line27");
+            Console.WriteLine(test);
 
             Console.ReadLine();
         }   

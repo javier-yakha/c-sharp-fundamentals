@@ -12,6 +12,8 @@ namespace YakhaLibrary.Exercism.Types.Strings
         static string isValidLineRegex = "^[[](TRC|DBG|INF|WRN|ERR|FTL)[]]";
         static string splitLogLineRegex = "<[=-*^]+>";
         static string countQuotedPasswordsRegex = """password""";
+        static string removeEndOfLineTextRegex = "end-of-line[0-9]+";
+
         public bool IsValidLine(string text)
             {
                 Regex regex = new(isValidLineRegex);
@@ -32,7 +34,8 @@ namespace YakhaLibrary.Exercism.Types.Strings
 
         public string RemoveEndOfLineText(string line)
         {
-            throw new NotImplementedException($"Please implement the LogParser.RemoveEndOfLineText() method");
+            Regex regex = new(removeEndOfLineTextRegex);
+            return regex.Replace(line, "");
         }
 
         public string[] ListLinesWithPasswords(string[] lines)
