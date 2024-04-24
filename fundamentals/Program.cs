@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using YakhaLibrary.Exercism;
 using YakhaLibrary.Exercism.Graphs;
 using YakhaLibrary.Exercism.Loops.Recursion;
@@ -44,10 +45,6 @@ namespace Fundamentals
             // EventsDelegates.SimulateClick();
 
             //RegEx.RegExMatching();
-
-            LogParser lp = new();
-            string test = lp.RemoveEndOfLineText("[INF] end-of-line23033 Network Falure end-of-line27");
-            Console.WriteLine(test);
 
             Console.ReadLine();
         }   
