@@ -10,6 +10,7 @@ namespace YakhaLibrary.Exercism.Types.Objects.Members
     {
         //private int precision;
         private double weight;
+        public double TareAdjustment;
         public WeighingMachine(int precision)
         {
             Precision = precision;
@@ -34,6 +35,5 @@ namespace YakhaLibrary.Exercism.Types.Objects.Members
                 return $"{displayWeight} kg";
             }
         }
-        public double TareAdjustment { get; set; }
     }
 }

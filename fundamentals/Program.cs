@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Globalization;
 using System.Security.Cryptography;
@@ -45,9 +46,12 @@ namespace Fundamentals
             // EventsDelegates.Click += EventHandlerClass.ButtonClickHandler;
             // EventsDelegates.SimulateClick();
 
-            //RegEx.RegExMatching();
-            
-            RotationalCipher.Rotate("abcdefghijklmnopqrstuvwxyz", 2);
+            // RegEx.RegExMatching();
+
+            // RotationalCipher.Rotate("abcdefghijklmnopqrstuvwxyz", 2);
+
+            Anagram an = new("solemn");
+            an.FindAnagrams(["lemons", "melons"]);
 
             Console.ReadLine();
         }   
