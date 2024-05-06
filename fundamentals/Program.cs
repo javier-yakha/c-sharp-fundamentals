@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using YakhaLibrary.DesignPatterns.FactoryMethod;
 using YakhaLibrary.Exercism;
 using YakhaLibrary.Exercism.Cipher;
 using YakhaLibrary.Exercism.Graphs;
@@ -50,10 +51,10 @@ namespace Fundamentals
 
             // RotationalCipher.Rotate("abcdefghijklmnopqrstuvwxyz", 2);
 
-            Anagram an = new("solemn");
-            an.FindAnagrams(["lemons", "melons"]);
+            Logistics logistics = new SeaAirLandLogistics();
+            Transport clientTransport = logistics.ManageTransportForCustomer("camel");
 
-            Console.ReadLine();
+            Console.ReadKey();
         }   
     }
 }
