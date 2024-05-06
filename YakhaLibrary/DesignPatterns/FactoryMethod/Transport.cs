@@ -12,7 +12,7 @@ namespace YakhaLibrary.DesignPatterns.FactoryMethod
         public string Destination { get; set; } = "Antarctica";
         public void CollectProductFromCustomer()
         {
-            Console.WriteLine("Picked up the goods");
+            Console.WriteLine("Picked up the goods\n");
         }
         public abstract void TransportGoods();
     }

@@ -52,7 +52,7 @@ namespace Fundamentals
             // RotationalCipher.Rotate("abcdefghijklmnopqrstuvwxyz", 2);
 
             Logistics logistics = new SeaAirLandLogistics();
-            Transport clientTransport = logistics.ManageTransportForCustomer("camel");
+            Transport clientTransport = logistics.ManageTransportForCustomer();
 
             Console.ReadKey();
         }   

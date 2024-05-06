@@ -10,8 +10,17 @@ namespace YakhaLibrary.DesignPatterns.FactoryMethod
     {
         // Creation is abstracted into the Concrete Creator
         protected abstract Transport TransportFactory(string transportType);
-        public Transport ManageTransportForCustomer(string transportType)
+        public Transport ManageTransportForCustomer()
         {
+            Console.Write("Which route would you like to use to deliver this goods?");
+            Console.WriteLine();
+
+            string transportType = string.Empty;
+            var input = Console.ReadLine();
+            if (input is not null) transportType = input;
+
+            Console.WriteLine();
+
             Transport transport = TransportFactory(transportType);
 
             // Operation is separated from the Creation

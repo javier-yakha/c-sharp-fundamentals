@@ -10,7 +10,10 @@ namespace YakhaLibrary.DesignPatterns.FactoryMethod
     {
         public override void TransportGoods()
         {
-            Console.WriteLine($"Goods have been collected from {Customer} and transported to: {Destination} by the Sea route");
+            Console.WriteLine($"Goods have been\n" +
+                $" - Collected from: {Customer}\n" +
+                $" - Transported to: {Destination}\n" +
+                $" - by the Sea route");
         }
     }
 }

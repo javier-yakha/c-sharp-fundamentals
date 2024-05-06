@@ -13,19 +13,14 @@ namespace YakhaLibrary.DesignPatterns.FactoryMethod
         {
             Transport transport;
 
-            if (transportType == "land")
-                transport = new LandTransport();
-
-            else if (transportType == "sea")
-                transport = new SeaTransport();
-
-            else if (transportType == "air")
-                transport = new AirTransport();
-
-            else if (transportType == "camel")
-                transport = new CamelTransport();
-
-            else throw new ArgumentException("Invalid route selected");
+            transport = transportType switch
+            {
+                "land" => new LandTransport(),
+                "sea" => new SeaTransport(),
+                "air" => new AirTransport(),
+                "camel" => new CamelTransport(),
+                _ => throw new NotSupportedException($"Route {transportType} is not supported")
+            };
 
             return transport;
         }
